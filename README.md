@@ -17,19 +17,6 @@ To decrypt the file:
     $ openssl-decrypt example.txt.aes
 
 
-## Related
-
-These commands are related:
-
-  * `gpg-encrypt`: use GPG to encrypt a file using our best settings.
-  
-  * `gpg-decrypt`: use GPG to decrypt a file using our best settings.
-
-  * `openssl-encrypt`: use OpenSLL to encrypt a file using our best settings.
-  
-  * `openssl-decrypt`: use OpenSSL to decrypt a file using our best settings.
-
-
 ## Settings
 
   * Symmetric encryption, i.e. we use the same password for encryption and decryption.
@@ -39,6 +26,23 @@ These commands are related:
     We choose this because it's a good balance of strong, fast, and portable.
 
   * Salt
+
+
+## See also
+
+These commands are similar:
+
+  * [`gpg-encrypt`](https://github.com/SixArm/gpg-encrypt): 
+    use GPG to encrypt a file using our best settings.
+  
+  * [`gpg-decrypt`](https://github.com/SixArm/gpg-decrypt): 
+    use GPG to decrypt a file using our best settings.
+
+  * [`openssl-encrypt`](https://github.com/SixArm/openssl-encrypt): 
+    use OpenSLL to encrypt a file using our best settings.
+  
+  * [`openssl-decrypt`](https://github.com/SixArm/openssl-decrypt): 
+    use OpenSSL to decrypt a file using our best settings.
 
 
 ## Command
