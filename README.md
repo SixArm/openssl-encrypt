@@ -14,7 +14,7 @@ Output is a new encrypted file:
 
 To decrypt the file:
 
-    $ openssl-decrypt example.txt.openssl
+    $ openssl-decrypt example.txt.aes
 
 
 ## Related
