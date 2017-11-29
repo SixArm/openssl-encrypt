@@ -4,11 +4,11 @@
 #
 # Syntax:
 #
-#     openssl-encrypt <file>
+#     openssl-encrypt <input file path> [output file path]
 #
 # Example:
 #
-#     $ openssl-encrypt foo.txt
+#     $ openssl-encrypt example.txt
 #
 # Output is a new encrypted file:
 #
@@ -27,9 +27,24 @@
 #   * Encryption using the aes-256-cbc cipher algorithm.
 #     We choose this because it's a good balance of strong, fast, and portable.
 # 
-#   * Salt
-# 
+#   * Message digest using SHA-256.
+#     We choose this because it's the current default of the current openssl tool,
+#     and we set it explicity because openssl versions have different defaults.
 #
+#   * Salt that is randomly generated.
+#
+#   * The output file path defaults to the input file path with suffix ".aes".
+#
+#
+# ## Command
+# 
+# The command is:
+# 
+#     openssl aes-256-cbc -salt -md sha256
+#       -in "example.txt"
+#       -out "example.txt.aes"
+# 
+# 
 # ## See also
 # 
 # These commands are similar:
@@ -47,26 +62,17 @@
 #     use OpenSSL to decrypt a file using our best settings.
 # 
 # 
-# ## Command
-# 
-# The command is:
-# 
-#     openssl \
-#     aes-256-cbc \
-#     -salt 
-#     -in "$1" \
-#     -out "$1.aes"
-# 
-# 
 # ## Tracking
 # 
 #   * Command: openssl-encrypt
-#   * Version: 1.0.0
+#   * Version: 2.0.0
 #   * Created: 2017-09-14
-#   * Updated: 2017-09-14
+#   * Updated: 2017-11-27
 #   * License: GPL
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 
 set -eu
-openssl aes-256-cbc -salt -in "$1" -out "$1.aes"
+in="$1"
+out=${2:-$1.aes}
+openssl aes-256-cbc -salt -md sha256 -in "$in" -out "$out"
