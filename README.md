@@ -38,6 +38,15 @@ To decrypt the file:
   * The output file path defaults to the input file path with suffix ".aes".
 
 
+## Command
+
+The command is:
+
+    openssl aes-256-cbc -salt -md sha256
+      -in "example.txt"
+      -out "example.txt.aes"
+
+
 ## See also
 
 These commands are similar:
@@ -53,28 +62,6 @@ These commands are similar:
   
   * [`openssl-decrypt`](https://github.com/SixArm/openssl-decrypt): 
     use OpenSSL to decrypt a file using our best settings.
-
-
-## Command
-
-The command is:
-
-    openssl aes-256-cbc -salt -md sha256
-      -in "example.txt"
-      -out "example.txt.aes"
-
-
-## See also
-
-These commands are related:
-
-  * `gpg-encrypt`: use GPG to encrypt a file using our best settings.
-  
-  * `gpg-decrypt`: use GPG to decrypt a file using our best settings.
-
-  * `openssl-encrypt`: use OpenSLL to encrypt a file using our best settings.
-  
-  * `openssl-decrypt`: use OpenSSL to decrypt a file using our best settings.
 
 
 ## Tracking
