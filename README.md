@@ -29,10 +29,6 @@ To decrypt the file:
     We choose this because it's the current default of the current openssl tool,
     and we set it explicity because openssl versions have different defaults.
 
-  * Message digest using SHA-256.
-    We choose this because it's the current default of the current openssl tool,
-    and we set it explicity because openssl versions have different defaults.
-
   * Salt that is randomly generated.
 
   * The output file path defaults to the input file path with suffix ".aes".
